@@ -14,9 +14,7 @@
 
 abc 사이트를 활성화 할 수 있다.
 
-    $ cd sites  
-    $ ln -s ../abc.conf enabled
-
+    $ ln -s ../abc.conf sites/enabled
     $ nginx -s reload
 
 ## 기타
