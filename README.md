@@ -6,7 +6,7 @@
 
     $ cd /usr/local/etc/nginx
     $ mv nginx.conf nginx.conf.org
-    $ ln -s $HOME/projects/nginx-conf-mac/nginx.conf .
+    $ ln -s $HOME/project/nginx-conf-mac/nginx.conf .
 
     $ nginx -s reload 
 
