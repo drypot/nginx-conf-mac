@@ -2,9 +2,7 @@
 
 개발용 맥에서 사용하는 nginx 설정.
 
-## nginx.conf 세팅
-
-nginx.conf 세팅.
+## nginx.conf 연결
 
     $ cd /opt/homebrew/etc/nginx
     $ mv nginx.conf nginx.conf.org
