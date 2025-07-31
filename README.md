@@ -2,26 +2,37 @@
 
 개발용 맥에서 사용하는 nginx 설정.
 
-## nginx 데몬으로 사용하지 않을 경우
+## nginx.conf 세팅
 
-    $ /opt/homebrew/bin/nginx -c $HOME/project/nginx-conf-mac/nginx.conf -g daemon\ off\;
-
-## nginx 데몬으로 사용할 경우
-
-기본 설정 폴더에 nginx.conf 세팅해 놓는다.
+nginx.conf 세팅.
 
     $ cd /opt/homebrew/etc/nginx
     $ mv nginx.conf nginx.conf.org
     $ ln -s $HOME/project/nginx-conf-mac/nginx.conf .
 
-    $ nginx -s reload 
-
 ## 사이트 활성화
 
-abc 사이트를 활성화 할 수 있다.
+sites/enabled 디렉토리에 심볼릭 링크를 만들고/삭제하는 식으로 사이트를 켜고 끈다.
+
+abc.conf 를 사용하는 사이트를 활성화 하려면.
 
     $ ln -s ../abc.conf sites/enabled
+
     $ nginx -s reload
+
+## nginx 실행
+
+nginx daemon 모드 끄고 실행.
+
+    $ nginx -g "daemon off;"
+
+nginx.conf 수정 후 테스트.
+
+    $ nginx -t
+
+nginx 데몬으로 돌고 있을 때, nginx.conf 리로딩.
+
+    $ nginx -s reload 
 
 ## 기타
 
