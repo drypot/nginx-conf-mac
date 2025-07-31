@@ -2,9 +2,15 @@
 
 개발용 맥에서 사용하는 nginx 설정.
 
-## nginx.conf 세팅
+## nginx 데몬으로 사용하지 않을 경우
 
-    $ cd /usr/local/etc/nginx
+    $ /opt/homebrew/bin/nginx -c $HOME/project/nginx-conf-mac/nginx.conf -g daemon\ off\;
+
+## nginx 데몬으로 사용할 경우
+
+기본 설정 폴더에 nginx.conf 세팅해 놓는다.
+
+    $ cd /opt/homebrew/etc/nginx
     $ mv nginx.conf nginx.conf.org
     $ ln -s $HOME/project/nginx-conf-mac/nginx.conf .
 
