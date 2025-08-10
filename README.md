@@ -8,16 +8,6 @@
     $ mv nginx.conf nginx.conf.org
     $ ln -s $HOME/project/nginx-conf-mac/nginx.conf .
 
-## 사이트 활성화
-
-sites/enabled 디렉토리에 심볼릭 링크를 만들고/삭제하는 식으로 사이트를 켜고 끈다.
-
-abc.conf 를 사용하는 사이트를 활성화 하려면.
-
-    $ ln -s ../abc.conf sites/enabled
-
-    $ nginx -s reload
-
 ## nginx 실행
 
 nginx daemon 모드 끄고 실행.
@@ -31,6 +21,30 @@ nginx.conf 수정 후 테스트.
 nginx 데몬으로 돌고 있을 때, nginx.conf 리로딩.
 
     $ nginx -s reload 
+
+## 사이트 추가
+
+`/etc/hosts` 에 `***.test` 주소를 등록.
+
+`sites/***.conf` 를 생성.
+
+`sites/enalbed` 폴더로 심볼릭 링크를 생성.
+
+    $ ln -s ../abc.conf sites/enabled
+
+nginx 설정 테스트.
+
+    $ nginx -t reload
+
+nginx 설정 리로딩.
+
+    $ nginx -s reload
+
+## cron 설정
+
+cron 으로 정기적으로 인증서를 업데이트할 수 있다.
+
+cron.md 참고.
 
 ## 기타
 
